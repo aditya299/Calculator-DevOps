@@ -1,21 +1,19 @@
 pipeline {
     agent any 
     stages {
-        stage('clone repo and clean') { 
+        stage('clean') { 
             steps {
-                sh "rm -rf calculator-devops"
-                sh "git clone https://github.com/aditya299/calculator-devops.git"
-                sh "mvn clean -f calculator-devops"
+                sh "mvn clean"
             }
         }
         stage('Test') { 
             steps {
-                sh "mvn test -f calculator-devops"
+                sh "mvn test"
             }
         }
-        stage('Deploy') { 
+        stage('package') { 
             steps {
-                sh "mvn package -f calculator-devops"
+                sh "mvn package"
             }
         }
     }
