@@ -17,7 +17,7 @@ package com.calculator;
 
 public class Calculator{
 	public static void main(String[] args) {
-		System.out.println("9 + 7 = " + add(10, 7));
+		System.out.println("9 + 7 = " + add(106, 7));
 	}
 	
 	public static int add(int a, int b) {
