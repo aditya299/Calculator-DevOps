@@ -1,9 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('clean') { 
+        stage('clean and compile') { 
             steps {
                 sh "mvn clean"
+                sh "mvn compile"
             }
         }
         stage('Test') { 
@@ -14,6 +15,11 @@ pipeline {
         stage('package') { 
             steps {
                 sh "mvn package"
+            }
+        }
+        stage('build-docker-image') { 
+            steps {
+                sh "docker build -t strangerthug/calc:latest ."
             }
         }
     }
