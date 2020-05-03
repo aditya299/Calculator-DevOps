@@ -25,7 +25,7 @@ pipeline {
          stage('Building image') {
       		steps {
         		script {
-          			dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          			dockerImage = docker.build registry + ":latest"
         		}
       		}
     	}
@@ -40,7 +40,7 @@ pipeline {
     	}
     	stage('Trigger Rundeck'){
     		steps {
-    			build 'rundeck-test'
+    			build 	'rundeck-test'
     		}
     	}
     }
