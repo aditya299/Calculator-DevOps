@@ -17,10 +17,21 @@ pipeline {
                 sh "mvn package"
             }
         }
-        stage('build-docker-image') { 
-            steps {
-                sh "docker build -t strangerthug/calc:latest ."
-            }
-        }
+         stage('Building image') {
+      		steps {
+        		script {
+          			dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        		}
+      		}
+    	}
+    	stage('Deploy Image') {
+      		steps {
+        		script {
+          			docker.withRegistry( '', registryCredential ) {
+            		dockerImage.push()
+          			}
+        		}
+      		}
+    	}
     }
 }
