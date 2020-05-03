@@ -1,4 +1,9 @@
 pipeline {
+	environment {
+    	registry = "strangerthug/calc"
+    	registryCredential = 'dockerhub-creds'
+    	dockerImage = ''
+  }
     agent any 
     stages {
         stage('clean and compile') { 
