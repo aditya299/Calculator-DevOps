@@ -1,9 +1,5 @@
 package com;
 
-/**
- * Hello world!
- *
- */
 public class Calculator{
 	public static void main(String[] args) {
 		System.out.println("1066 + 7 = " + add(1066, 7));
@@ -27,7 +23,7 @@ public class Calculator{
 		if (b == 0) {
 				throw new IllegalArgumentException("Divisor cannot divide by 0");
 		} else {
-			result = a / b;
+			result = Double.valueOf(a) / Double.valueOf(b);
 		}
 		return result;
 	}
