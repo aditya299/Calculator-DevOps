@@ -1,10 +1,10 @@
-package com.calculator;
+package com;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CalculatorTests {
+public class addTest {
 
 	@Test
 	public void Addtest() {

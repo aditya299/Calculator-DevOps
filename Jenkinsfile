@@ -22,14 +22,14 @@ pipeline {
                 sh "mvn package"
             }
         }
-         stage('Building image') {
+         stage('build image') {
       		steps {
         		script {
           			dockerImage = docker.build registry + ":latest"
         		}
       		}
     	}
-    	stage('Deploy Image') {
+    	stage('publish Image') {
       		steps {
         		script {
           			docker.withRegistry( '', registryCredential ) {
@@ -38,7 +38,7 @@ pipeline {
         		}
       		}
     	}
-    	stage('Trigger Rundeck'){
+    	stage('trigger Rundeck'){
     		steps {
     			build 	'rundeck-test'
     		}
