@@ -23,7 +23,7 @@ public class Calculator{
 		return a * b;
 	}
 	public static double divide(int a, int b) {
-		float result;
+		double result;
 		if (b == 0) {
 				throw new IllegalArgumentException("Divisor cannot divide by 0");
 		} else {
