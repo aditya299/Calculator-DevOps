@@ -6,6 +6,7 @@ public class Calculator{
 		System.out.println("5667 - 234 = " + subtract(5667, 234));
 		System.out.println("12 * 134 = " + multiply(12, 134));
 		System.out.println("789 / 12 = " + divide(789, 12));
+		System.out.println("hello");
 	}
 	
 	public static int add(int a, int b) {
